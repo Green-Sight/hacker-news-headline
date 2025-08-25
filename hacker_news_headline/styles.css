@@ -1,0 +1,35 @@
+/* Styles for Hacker News Headlines app */
+
+#main {
+    height: 100%;
+    padding: 1;
+}
+
+#headlines {
+    height: 90%;
+    border: solid green;
+    margin-bottom: 1;
+}
+
+.headline {
+    color: white;
+    text-style: bold;
+    margin-bottom: 1;
+}
+
+.url {
+    color: blue;
+    text-style: italic;
+    margin-bottom: 2;
+}
+
+HeadlineWidget {
+    margin-bottom: 1;
+    padding: 1;
+    border: solid gray;
+}
+
+Button {
+    width: 100%;
+    margin-top: 1;
+}
