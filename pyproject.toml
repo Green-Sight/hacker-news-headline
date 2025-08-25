@@ -1,0 +1,30 @@
+[project]
+name = "hacker-news-headline"
+version = "0.1.0"
+description = "A Terminal User Interface (TUI) for browsing Hacker News headlines"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "textual>=5.3.0",
+]
+authors = [
+    {name = "Green-Sight", email = ""},
+]
+keywords = ["hacker-news", "tui", "terminal", "textual"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: End Users/Desktop",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/Green-Sight/hacker-news-headline"
+Repository = "https://github.com/Green-Sight/hacker-news-headline"
+
+[project.scripts]
+hacker-news-headline = "hacker_news_headline:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
