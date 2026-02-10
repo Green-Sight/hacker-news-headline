@@ -21,12 +21,16 @@ We have an existing table `iot_measurements` with millions of records from vario
 
 ## Files
 
-- `01_original_table.sql` - Original table structure
+- `01_original_table.sql` - Original table structure (with sample data for testing)
 - `02_create_partitioned_table.sql` - Create partitioned table structure
 - `03_backfill_data.sql` - Safely backfill historical data
 - `04_switchover.sql` - Switch to partitioned table
 - `05_cleanup.sql` - Clean up old table
 - `complete_migration.sql` - Complete migration script with all steps
+- `GUIDE.md` - Comprehensive practical guide with detailed examples
+- `QUICK_REFERENCE.md` - Quick reference for common commands and troubleshooting
+- `validate.sh` - Script to validate SQL syntax and file structure
+- `test_migration.sh` - End-to-end test script (requires PostgreSQL running)
 
 ## Quick Start
 
@@ -44,6 +48,29 @@ Or run the complete migration:
 
 ```bash
 psql -U your_user -d your_database -f complete_migration.sql
+```
+
+For a quick reference of commands and troubleshooting, see [QUICK_REFERENCE.md](QUICK_REFERENCE.md).
+
+## Testing
+
+To test the migration on a local PostgreSQL instance:
+
+```bash
+# Make sure PostgreSQL is running and accessible
+./test_migration.sh
+```
+
+The test script will:
+1. Create a test database
+2. Run through all migration steps
+3. Validate the results
+4. Show partition pruning in action
+
+To validate the SQL files without executing them:
+
+```bash
+./validate.sh
 ```
 
 ## Safety Features
