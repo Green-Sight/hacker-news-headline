@@ -79,6 +79,20 @@ uv run python -m hacker_news_headline.main
 
 - [textual](https://github.com/Textualize/textual) - Modern Python TUI framework
 
+## Examples
+
+This repository includes practical examples and guides:
+
+### PostgreSQL Partitioning Example
+
+A comprehensive guide on safely partitioning an existing PostgreSQL table containing IoT device measurements. Learn how to:
+- Create partitions on existing tables without downtime
+- Backfill historical data safely
+- Handle concurrent inserts during migration
+- Prevent data loss during the migration process
+
+See [examples/postgres-partitioning](examples/postgres-partitioning/) for detailed SQL scripts and guides.
+
 ## License
 
 This project is open source. Feel free to contribute!
