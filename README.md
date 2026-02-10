@@ -83,37 +83,38 @@ uv run python -m hacker_news_headline.main
 
 ### PostgreSQL Partitioning Guide
 
-This repository includes comprehensive resources for PostgreSQL table partitioning:
+This repository includes comprehensive resources for PostgreSQL table partitioning.
+
+**👉 Start here: [POSTGRES_PARTITIONING_README.md](POSTGRES_PARTITIONING_README.md)** - Complete overview with navigation guide
 
 #### 📚 Documentation
-- **[POSTGRES_PARTITIONING_GUIDE.md](POSTGRES_PARTITIONING_GUIDE.md)** - Complete guide on safely creating partitions on existing tables
-  - Detailed migration strategy
+- **[POSTGRES_PARTITIONING_GUIDE.md](POSTGRES_PARTITIONING_GUIDE.md)** - Complete guide (601 lines)
+  - Detailed migration strategy with trigger-based dual-write approach
   - Safety mechanisms and rollback procedures
-  - Performance considerations
-  - Troubleshooting guide
+  - Performance considerations and optimization tips
+  - Comprehensive troubleshooting guide
 
-- **[POSTGRES_PARTITIONING_QUICK_REF.md](POSTGRES_PARTITIONING_QUICK_REF.md)** - Quick reference guide
-  - Command cheat sheet
-  - Common patterns and strategies
-  - Performance tips and troubleshooting
-  - Maintenance schedules
+- **[POSTGRES_PARTITIONING_QUICK_REF.md](POSTGRES_PARTITIONING_QUICK_REF.md)** - Quick reference (387 lines)
+  - Command cheat sheet for 10 common operations
+  - Partition strategies (Range, List, Hash) with examples
+  - Performance tips and anti-patterns
+  - Maintenance schedules and monitoring queries
 
 #### 💻 Code
-- **[postgres_partitioning_example.sql](postgres_partitioning_example.sql)** - Production-ready SQL script (637 lines)
+- **[postgres_partitioning_example.sql](postgres_partitioning_example.sql)** - Production-ready script (637 lines)
   - Complete working example with IoT device measurements
-  - Safe migration from existing table to partitioned table
-  - Zero-downtime backfilling strategy
-  - Trigger-based dual-write approach
-  - Data integrity verification
-  - Automatic partition creation and maintenance
-  - Rollback procedures
+  - Safe migration: existing table → partitioned table
+  - Zero-downtime backfilling with batched approach
+  - Trigger-based routing for incoming data during migration
+  - Data integrity verification and rollback procedures
+  - Automatic partition creation and maintenance functions
 
 #### 🎯 Perfect For
 - Time-series data from IoT devices
-- High-volume measurement storage
+- High-volume measurement storage (millions of rows)
 - Tables requiring data archival/retention policies
-- Systems needing improved query performance on large datasets
-- Zero-downtime migrations
+- Systems needing 10-100x query performance improvements
+- Zero-downtime migrations on production systems
 
 ## License
 
