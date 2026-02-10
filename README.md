@@ -79,6 +79,26 @@ uv run python -m hacker_news_headline.main
 
 - [textual](https://github.com/Textualize/textual) - Modern Python TUI framework
 
+## Additional Resources
+
+### PostgreSQL Partitioning Guide
+
+This repository includes a comprehensive guide for PostgreSQL table partitioning:
+
+- **[POSTGRES_PARTITIONING_GUIDE.md](POSTGRES_PARTITIONING_GUIDE.md)** - Complete guide on safely creating partitions on existing tables
+- **[postgres_partitioning_example.sql](postgres_partitioning_example.sql)** - Production-ready SQL script demonstrating:
+  - Safe migration from existing table to partitioned table
+  - IoT device measurements use case
+  - Zero-downtime backfilling strategy
+  - Data integrity verification
+  - Automatic partition creation and maintenance
+
+Perfect for:
+- Time-series data from IoT devices
+- High-volume measurement storage
+- Tables requiring data archival/retention policies
+- Systems needing improved query performance on large datasets
+
 ## License
 
 This project is open source. Feel free to contribute!
