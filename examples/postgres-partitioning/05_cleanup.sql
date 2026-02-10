@@ -52,29 +52,40 @@ ORDER BY tablename;
 -- pg_dump -U your_user -d your_database -t iot_measurements_old_backup -F c -f iot_measurements_old_backup.dump
 
 -- Step 4: Drop the old table and its indexes
-DROP TABLE IF EXISTS iot_measurements_old_backup CASCADE;
-
-RAISE NOTICE 'Dropped old backup table: iot_measurements_old_backup';
+DO $$
+BEGIN
+    DROP TABLE IF EXISTS iot_measurements_old_backup CASCADE;
+    RAISE NOTICE 'Dropped old backup table: iot_measurements_old_backup';
+END $$;
 
 -- Step 5: Drop the migration buffer table
-DROP TABLE IF EXISTS iot_measurements_migration_buffer CASCADE;
-
-RAISE NOTICE 'Dropped migration buffer table: iot_measurements_migration_buffer';
+DO $$
+BEGIN
+    DROP TABLE IF EXISTS iot_measurements_migration_buffer CASCADE;
+    RAISE NOTICE 'Dropped migration buffer table: iot_measurements_migration_buffer';
+END $$;
 
 -- Step 6: Drop the buffer function (no longer needed)
-DROP FUNCTION IF EXISTS buffer_new_measurements() CASCADE;
-
-RAISE NOTICE 'Dropped migration buffer function';
+DO $$
+BEGIN
+    DROP FUNCTION IF EXISTS buffer_new_measurements() CASCADE;
+    RAISE NOTICE 'Dropped migration buffer function';
+END $$;
 
 -- Step 7: Drop the temporary snapshot table
-DROP TABLE IF EXISTS migration_snapshot;
-
-RAISE NOTICE 'Dropped migration snapshot table';
+DO $$
+BEGIN
+    DROP TABLE IF EXISTS migration_snapshot;
+    RAISE NOTICE 'Dropped migration snapshot table';
+END $$;
 
 -- Step 8: Vacuum to reclaim disk space
 VACUUM FULL iot_measurements;
 
-RAISE NOTICE 'Vacuum completed on iot_measurements';
+DO $$
+BEGIN
+    RAISE NOTICE 'Vacuum completed on iot_measurements';
+END $$;
 
 -- Step 9: Verify remaining objects
 SELECT 

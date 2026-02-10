@@ -22,6 +22,8 @@ CREATE TABLE iot_measurements_partitioned (
 ) PARTITION BY RANGE (measured_at);
 
 -- Add the same check constraint as the original table
+-- Note: Using a different name (_partitioned suffix) to avoid conflicts during migration
+-- This will be the only constraint after the old table is dropped
 ALTER TABLE iot_measurements_partitioned 
     ADD CONSTRAINT chk_measured_at_not_future_partitioned
     CHECK (measured_at <= CURRENT_TIMESTAMP);

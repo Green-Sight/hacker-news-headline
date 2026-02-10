@@ -189,14 +189,17 @@ ORDER BY tablename;
 -- GRANT SELECT, INSERT, UPDATE, DELETE ON iot_measurements TO your_app_user;
 -- GRANT USAGE, SELECT ON SEQUENCE iot_measurements_id_seq TO your_app_user;
 
-RAISE NOTICE '========================================';
-RAISE NOTICE 'SWITCHOVER COMPLETED SUCCESSFULLY!';
-RAISE NOTICE '========================================';
-RAISE NOTICE 'The partitioned table is now active as "iot_measurements"';
-RAISE NOTICE 'The old table is backed up as "iot_measurements_old_backup"';
-RAISE NOTICE 'Auto-partition creation is enabled for future dates';
-RAISE NOTICE 'Migration buffer table can be dropped after verification';
-RAISE NOTICE '========================================';
+DO $$
+BEGIN
+    RAISE NOTICE '========================================';
+    RAISE NOTICE 'SWITCHOVER COMPLETED SUCCESSFULLY!';
+    RAISE NOTICE '========================================';
+    RAISE NOTICE 'The partitioned table is now active as "iot_measurements"';
+    RAISE NOTICE 'The old table is backed up as "iot_measurements_old_backup"';
+    RAISE NOTICE 'Auto-partition creation is enabled for future dates';
+    RAISE NOTICE 'Migration buffer table can be dropped after verification';
+    RAISE NOTICE '========================================';
+END $$;
 
 -- ============================================================================
 -- Notes:
