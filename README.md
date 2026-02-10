@@ -83,21 +83,37 @@ uv run python -m hacker_news_headline.main
 
 ### PostgreSQL Partitioning Guide
 
-This repository includes a comprehensive guide for PostgreSQL table partitioning:
+This repository includes comprehensive resources for PostgreSQL table partitioning:
 
+#### 📚 Documentation
 - **[POSTGRES_PARTITIONING_GUIDE.md](POSTGRES_PARTITIONING_GUIDE.md)** - Complete guide on safely creating partitions on existing tables
-- **[postgres_partitioning_example.sql](postgres_partitioning_example.sql)** - Production-ready SQL script demonstrating:
+  - Detailed migration strategy
+  - Safety mechanisms and rollback procedures
+  - Performance considerations
+  - Troubleshooting guide
+
+- **[POSTGRES_PARTITIONING_QUICK_REF.md](POSTGRES_PARTITIONING_QUICK_REF.md)** - Quick reference guide
+  - Command cheat sheet
+  - Common patterns and strategies
+  - Performance tips and troubleshooting
+  - Maintenance schedules
+
+#### 💻 Code
+- **[postgres_partitioning_example.sql](postgres_partitioning_example.sql)** - Production-ready SQL script (637 lines)
+  - Complete working example with IoT device measurements
   - Safe migration from existing table to partitioned table
-  - IoT device measurements use case
   - Zero-downtime backfilling strategy
+  - Trigger-based dual-write approach
   - Data integrity verification
   - Automatic partition creation and maintenance
+  - Rollback procedures
 
-Perfect for:
+#### 🎯 Perfect For
 - Time-series data from IoT devices
 - High-volume measurement storage
 - Tables requiring data archival/retention policies
 - Systems needing improved query performance on large datasets
+- Zero-downtime migrations
 
 ## License
 
